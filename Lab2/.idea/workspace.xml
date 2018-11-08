@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68074a08-2778-4a0a-a4a3-63130ec58fda" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ContactsTester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DoubleMatrixTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DoubleMatrixTester.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,22 +22,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="2" />
+          <entry key="java" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="2" />
+          <entry key="JAVA" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4183" />
+          <entry key="java" value="7762" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4183" />
+          <entry key="JAVA" value="7762" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
@@ -49,24 +49,38 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/DoubleMatrixTester.java">
+        <entry file="file://$PROJECT_DIR$/src/ContactsTester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="256" column="5" lean-forward="true" selection-end-line="299" selection-end-column="1" />
+            <state relative-caret-position="217">
+              <caret line="274" column="20" lean-forward="true" selection-start-line="274" selection-start-column="20" selection-end-line="274" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7223#7224#0" expanded="true" />
-                <element signature="e#7277#7278#0" expanded="true" />
-                <element signature="e#7293#7294#0" expanded="true" />
-                <element signature="e#7317#7318#0" expanded="true" />
-                <element signature="e#7336#7337#0" expanded="true" />
-                <element signature="e#7360#7361#0" expanded="true" />
-                <element signature="e#9420#9421#0" expanded="true" />
-                <element signature="e#9476#9477#0" expanded="true" />
-                <element signature="e#9563#9564#0" expanded="true" />
-                <element signature="e#9606#9607#0" expanded="true" />
-                <element signature="e#9698#9699#0" expanded="true" />
-                <element signature="e#9744#9745#0" expanded="true" />
+                <element signature="e#5495#5496#0" expanded="true" />
+                <element signature="e#5527#5528#0" expanded="true" />
+                <element signature="e#5830#5831#0" expanded="true" />
+                <element signature="e#5860#5861#0" expanded="true" />
+                <element signature="e#5890#5891#0" expanded="true" />
+                <element signature="e#5918#5919#0" expanded="true" />
+                <element signature="e#6832#6833#0" expanded="true" />
+                <element signature="e#6885#6886#0" expanded="true" />
+                <element signature="e#6147#6148#0" expanded="true" />
+                <element signature="e#6177#6178#0" expanded="true" />
+                <element signature="e#6207#6208#0" expanded="true" />
+                <element signature="e#6235#6236#0" expanded="true" />
+                <element signature="e#7481#7482#0" expanded="true" />
+                <element signature="e#7534#7535#0" expanded="true" />
+                <element signature="e#7001#7002#0" expanded="true" />
+                <element signature="e#7060#7061#0" expanded="true" />
+                <element signature="e#7121#7122#0" expanded="true" />
+                <element signature="e#7180#7181#0" expanded="true" />
+                <element signature="e#7509#7510#0" expanded="true" />
+                <element signature="e#7541#7542#0" expanded="true" />
+                <element signature="e#7574#7575#0" expanded="true" />
+                <element signature="e#7612#7613#0" expanded="true" />
+                <element signature="e#7645#7646#0" expanded="true" />
+                <element signature="e#7700#7701#0" expanded="true" />
+                <element signature="e#7728#7729#0" expanded="true" />
+                <element signature="e#7756#7757#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -86,6 +100,7 @@
       <find>MatrixReader</find>
       <find>INPUT_TEST</find>
       <find>equals</find>
+      <find>Latest contact</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -95,6 +110,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/DoubleMatrixTester.java" />
+        <option value="$PROJECT_DIR$/src/ContactsTester.java" />
       </list>
     </option>
   </component>
@@ -139,7 +155,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541703861888" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541715435818" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -155,7 +171,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ContactsTester">
+    <configuration name="ContactsTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ContactsTester" />
+      <module name="Lab2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DoubleMatrixTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DoubleMatrixTester" />
       <module name="Lab2" />
@@ -163,8 +186,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PhoneContact" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PhoneContact" />
+      <module name="Lab2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.DoubleMatrixTester" />
+      <item itemvalue="Application.ContactsTester" />
+      <item itemvalue="Application.PhoneContact" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ContactsTester" />
+        <item itemvalue="Application.PhoneContact" />
         <item itemvalue="Application.DoubleMatrixTester" />
       </list>
     </recent_temporary>
@@ -179,12 +216,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1541674522377</updated>
-      <workItem from="1541674526728" duration="13074000" />
+      <workItem from="1541674526728" duration="23156000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13074000" />
+    <option name="totallyTimeSpent" value="23156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -204,8 +241,8 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4212766" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.49787235" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47517732" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3460993" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -252,6 +289,42 @@
             <element signature="e#9606#9607#0" expanded="true" />
             <element signature="e#9698#9699#0" expanded="true" />
             <element signature="e#9744#9745#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ContactsTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="274" column="20" lean-forward="true" selection-start-line="274" selection-start-column="20" selection-end-line="274" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5495#5496#0" expanded="true" />
+            <element signature="e#5527#5528#0" expanded="true" />
+            <element signature="e#5830#5831#0" expanded="true" />
+            <element signature="e#5860#5861#0" expanded="true" />
+            <element signature="e#5890#5891#0" expanded="true" />
+            <element signature="e#5918#5919#0" expanded="true" />
+            <element signature="e#6832#6833#0" expanded="true" />
+            <element signature="e#6885#6886#0" expanded="true" />
+            <element signature="e#6147#6148#0" expanded="true" />
+            <element signature="e#6177#6178#0" expanded="true" />
+            <element signature="e#6207#6208#0" expanded="true" />
+            <element signature="e#6235#6236#0" expanded="true" />
+            <element signature="e#7481#7482#0" expanded="true" />
+            <element signature="e#7534#7535#0" expanded="true" />
+            <element signature="e#7001#7002#0" expanded="true" />
+            <element signature="e#7060#7061#0" expanded="true" />
+            <element signature="e#7121#7122#0" expanded="true" />
+            <element signature="e#7180#7181#0" expanded="true" />
+            <element signature="e#7509#7510#0" expanded="true" />
+            <element signature="e#7541#7542#0" expanded="true" />
+            <element signature="e#7574#7575#0" expanded="true" />
+            <element signature="e#7612#7613#0" expanded="true" />
+            <element signature="e#7645#7646#0" expanded="true" />
+            <element signature="e#7700#7701#0" expanded="true" />
+            <element signature="e#7728#7729#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
           </folding>
         </state>
       </provider>
