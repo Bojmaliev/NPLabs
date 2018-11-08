@@ -1,3 +1,10 @@
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.text.DecimalFormat;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class DoubleMatrixTester {
 
@@ -184,5 +191,110 @@ public class DoubleMatrixTester {
         }
 
         scanner.close();
+    }
+}
+final class DoubleMatrix {
+    private double matrix[][];
+    private int m;
+    private int n;
+    DoubleMatrix(double a[], int m, int n) throws Exception{
+        this.m=m;
+        this.n=n;
+        if(m*n > a.length)throw new InsufficientElementsException();
+        this.matrix = new double[m][n];
+
+        double[] newMatrix = Arrays.copyOfRange(a, a.length-m*n, a.length);
+        IntStream.range(0,m).forEach(i->IntStream.range(0,n).forEach(j-> this.matrix[i][j] = newMatrix[i*n+j]));
+
+    }
+    String getDimensions(){
+        return String.format("[%d x %d]", m,n);
+    }
+    int rows(){
+        return m;
+    }
+    int columns(){
+        return n;
+    }
+    double maxElementAtRow(int row) throws Exception{
+        if(row > 0 && row <= m){
+            return Arrays.stream(this.matrix[row-1]).max().getAsDouble();
+        }
+        throw new InvalidRowNumberException();
+
+
+    }
+    double maxElementAtColumn(int column) throws Exception{
+        if(column > 0 && column <= n){
+            return IntStream.range(0,m).mapToDouble(i-> this.matrix[i][column-1]).max().getAsDouble();
+        }
+        throw new InvalidColumnNumberException();
+    }
+    double sum(){
+        return Arrays.stream(this.matrix)
+                .mapToDouble(row -> Arrays.stream(row).sum())
+                .sum();
+    }
+    double [] toSortedArray(){
+        double [] niza = Arrays.stream(this.matrix).flatMapToDouble(Arrays::stream).toArray();
+        Arrays.sort(niza);
+
+        return IntStream.range(0,niza.length).mapToDouble(i-> niza[niza.length-1-i]).toArray();
+    }
+    double[][] getMatrix(){return matrix;}
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i<matrix.length; i++){
+           for(int j=0; j<matrix[i].length; j++){
+               sb.append(String.format("%.2f",matrix[i][j]));
+               if(j < matrix[i].length-1)sb.append("\t");
+           }
+            if(i < matrix.length-1)sb.append("\n");
+        }
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == this) return true;
+        if(obj == null) return false;
+        if(!(obj.getClass() == getClass())) return false;
+        DoubleMatrix dm = (DoubleMatrix)obj;
+        return m == dm.m && n==dm.n && Arrays.deepEquals(matrix, dm.matrix);
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + Arrays.deepHashCode(matrix);
+        return result;
+    }
+}
+class MatrixReader{
+    public static DoubleMatrix read(InputStream inputStream) throws Exception{
+        Scanner sc = new Scanner(inputStream);
+        int m = sc.nextInt();
+        int n  = sc.nextInt();
+        double matrix[] = new double[m*n];
+        IntStream.range(0,m*n).forEach(i->matrix[i] = sc.nextDouble());
+        return new DoubleMatrix(matrix, m, n);
+    }
+}
+class InsufficientElementsException extends Exception{
+    InsufficientElementsException(){
+        super("Insufficient number of elements");
+    }
+}
+class InvalidRowNumberException extends  Exception{
+    InvalidRowNumberException(){
+        super("Invalid row number");
+    }
+}
+class InvalidColumnNumberException extends Exception{
+    InvalidColumnNumberException(){
+        super("Invalid column number");
     }
 }
