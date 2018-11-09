@@ -310,7 +310,7 @@ class Faculty{
         return students.stream().mapToInt(a-> a.getNumContacts()).sum()/(double)students.size();
     }
     public Student getStudentWithMostContacts(){
-        return students.stream().max(Comparator.comparing(Student::getNumContacts)).get();
+        return students.stream().reduce((a,b) -> (a.getNumContacts() > b.getNumContacts() ? a : (a.getNumContacts()==b.getNumContacts() ? (a.getIndex() > b.getIndex() ? a : b) : b))).get();
     }
 
     @Override
