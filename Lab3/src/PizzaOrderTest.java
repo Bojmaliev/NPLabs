@@ -189,9 +189,8 @@ class Pair<E,T>{
         this.item2=item2;
     }
 }
-class EmptyOrderException extends Exception{
-    EmptyOrderException(){
-
+class EmptyOrder extends Exception{
+    EmptyOrder(){
     }
 }
 class Order{
@@ -205,8 +204,7 @@ class Order{
         if(count > 10) throw new ItemOutOfStockException(item);
         if(itemExists(item)){
             getItemByType(item.getType()).item2 = count;
-        }
-        listItems.add(new Pair<>(item, count));
+        }else listItems.add(new Pair<>(item, count));
     }
     Pair<Item, Integer> getItemByType(String type){
         return listItems.stream().filter(a-> a.item1.getType().equals(type)).findFirst().get();
@@ -224,12 +222,12 @@ class Order{
         listItems.remove(idx);
     }
     void displayOrder(){
-        IntStream.range(0, listItems.size()).forEach(i-> System.out.println(String.format("   %d.%-15sx%2d%5d$", i+1, listItems.get(i).item1.getType(), listItems.get(i).item2, listItems.get(i).item2*listItems.get(i).item1.getPrice())));
+        IntStream.range(0, listItems.size()).forEach(i-> System.out.println(String.format("  %d.%-15sx%2d%5d$", i+1, listItems.get(i).item1.getType(), listItems.get(i).item2, listItems.get(i).item2*listItems.get(i).item1.getPrice())));
         System.out.println(String.format("Total:                %5d$", getPrice()));
     }
     void lock() throws Exception{
         if(listItems.size() == 0){
-            throw new EmptyOrderException();
+            throw new EmptyOrder();
         }
         this.locked = true;
     }
