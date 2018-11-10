@@ -158,30 +158,30 @@ public class BankTester {
 }
 
 class Account {
-    private String name;
-    private long id;
-    private String balance;
+     private String name;
+     private long id;
+     private String balance;
 
-    public Account(String name,String balance){
+     public Account(String name,String balance){
 
-        this.name=name;
+         this.name=name;
 
-        this.balance=balance;
-        Random r=new Random();
-        id=r.nextLong();
-    }
-    public String getBalance(){
-        return balance;
-    }
-    public void setBalance(String balance){
-        this.balance=balance;
-    }
-    public String getName(){
-        return name;
-    }
-    public long getId(){
-        return id;
-    }
+         this.balance=balance;
+         Random r=new Random();
+         id=r.nextLong();
+     }
+     public String getBalance(){
+         return balance;
+     }
+     public void setBalance(String balance){
+         this.balance=balance;
+     }
+     public String getName(){
+         return name;
+     }
+     public long getId(){
+         return id;
+     }
 
     @Override
     public String toString() {
