@@ -1,6 +1,7 @@
 import java.util.*;
 import java.util.stream.Collectors;
 
+
 public class BankTester {
 
     public static void main(String[] args) {
@@ -23,8 +24,7 @@ public class BankTester {
         Account a3 = new Account("Andrej", "30.00$");
         Account a4 = new Account("Gajduk", "20.00$");
         List<Account> all = Arrays.asList(a1, a2, a3, a4);
-        if (!(a1.equals(a1)&&!a1.equals(a2)&&!a2.equals(a1) && !a3.equals(a1)
-                && !a4.equals(a1)
+        if (!(a1.equals(a1)&&!a1.equals(a2)&&!a2.equals(a1)&&!a3.equals(a1)&&!a4.equals(a1)
                 && !a1.equals(null))) {
             System.out.println("Your account equals method does not work properly.");
             return;
@@ -142,6 +142,8 @@ public class BankTester {
         }
     }
 
+
+
     private static Transaction getTransaction(String description, int from_idx, int to_idx, String amount, String o, Bank bank) {
         switch (description) {
             case "FlatAmount":
@@ -155,103 +157,114 @@ public class BankTester {
     }
 
 
+
+
 }
 
 class Account {
-     private String name;
-     private long id;
-     private String balance;
 
-     public Account(String name,String balance){
+    private String name;
+    private String balance;
+    private long id;
 
-         this.name=name;
 
-         this.balance=balance;
-         Random r=new Random();
-         id=r.nextLong();
-     }
-     public String getBalance(){
-         return balance;
-     }
-     public void setBalance(String balance){
-         this.balance=balance;
-     }
-     public String getName(){
-         return name;
-     }
-     public long getId(){
-         return id;
-     }
+    Account(String name, String balance)
+    {
+        this.name=name;
+        this.balance=balance;
+        Random r=new Random();
+        id=r.nextInt();
 
-    @Override
-    public String toString() {
-        return String.format("Name: %s\nBalance: %s\n", name, balance);
     }
+
+    public String getBalance(){
+        return balance;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public long getId(){
+        return id;
+    }
+
+    public void setBalance(String balance)
+    {
+        this.balance=balance;
+    }
+
+    public String toString()
+    {
+        return String.format("Name: %s \n Balance: %s \n" , name, balance);
+    }
+
+
 }
-abstract class Transaction{
 
-    private long fromId;
-    private long toId;
-    private String description;
-    private String amount;
 
-    Transaction(long fromId, long toId, String description, String amount){
+abstract class Transaction {
+
+    private long fromId,toId;
+    String description,amount;
+
+    Transaction(long fromId, long toId, String description, String amount)
+    {
         this.fromId=fromId;
         this.toId=toId;
         this.description=description;
         this.amount=amount;
+
+
     }
+
+    public String getDescription()
+    {
+        return description;
+    }
+
     public String getAmount(){
         return amount;
     }
     public long getFromId(){
         return fromId;
     }
-    public String getDescription(){
-        return description;
-    }
     public long getToId(){
         return toId;
     }
-
-    public double calculateProvison(){
-        if(description.equals("FlatAmount")) {
-            FlatAmountProvisionTransaction transaction = (FlatAmountProvisionTransaction) this;
-            return Bank.stringToDouble(transaction.getFlatAmount());
-        }else{
-            FlatPercentProvisionTransaction transaction = (FlatPercentProvisionTransaction) this;
-            return (((int)Bank.stringToDouble(amount))*transaction.getPercent())/100.00;
+    public double calculateProvision()
+    {
+        if(description=="FlatAmount")
+        {
+            FlatAmountProvisionTransaction tran= (FlatAmountProvisionTransaction) this;
+            return Double.parseDouble(tran.getFlatAmount());
         }
+        else {
+            FlatPercentProvisionTransaction tran=(FlatPercentProvisionTransaction) this;
+            return ((tran.getPercent())*(int)Double.parseDouble(tran.getAmount()))/100.00;
+        }
+
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Transaction that = (Transaction) o;
-        return fromId == that.fromId &&
-                toId == that.toId &&
-                Objects.equals(description, that.description) &&
-                Objects.equals(amount, that.amount);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(fromId, toId, description, amount);
-    }
+
+
+
 }
-class FlatAmountProvisionTransaction extends  Transaction{
 
+class FlatAmountProvisionTransaction extends Transaction{
     private String flatProvision;
-    FlatAmountProvisionTransaction(long fromId, long toId,String amount, String flatProvision){
 
-        super(fromId,toId,"FlatAmount",amount);
+    FlatAmountProvisionTransaction(long fromId, long toId,String amount, String flatProvision){
+        super(fromId,toId, "FlatAmount" , amount);
         this.flatProvision=flatProvision;
     }
 
-    public String getFlatAmount(){
+    public String getFlatAmount()
+    {
         return flatProvision;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -266,16 +279,17 @@ class FlatAmountProvisionTransaction extends  Transaction{
         return Objects.hash(flatProvision);
     }
 }
-class FlatPercentProvisionTransaction  extends  Transaction{
 
-    private int centsPerDolar;
-    FlatPercentProvisionTransaction (long fromId, long toId, String amount, int centsPerDolar){
-        super(fromId,toId,"FlatPercent",amount);
-        this.centsPerDolar=centsPerDolar;
-
+class FlatPercentProvisionTransaction extends Transaction{
+    private int flatPercent;
+    FlatPercentProvisionTransaction (long fromId, long toId, String amount, int centsPerDolar) {
+        super(fromId,toId, "FlatPercent" , amount);
+        flatPercent=centsPerDolar;
     }
-    public int getPercent(){
-        return centsPerDolar;
+
+    public int getPercent()
+    {
+        return flatPercent;
     }
 
     @Override
@@ -283,70 +297,86 @@ class FlatPercentProvisionTransaction  extends  Transaction{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FlatPercentProvisionTransaction that = (FlatPercentProvisionTransaction) o;
-        return centsPerDolar == that.centsPerDolar;
+        return Objects.equals(flatPercent, that.flatPercent);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(centsPerDolar);
+        return Objects.hash(flatPercent);
     }
 }
-class Bank {
-    private Account[] accounts;
 
-    private String name;
-    private String sumTransfers;
-    private String sumProvision;
+
+class Bank{
+    String name;
+    Account [] accounts;
+    private float vkupnaTransfer, provizija;
     Bank(String name, Account accounts[]){
         this.name=name;
-        this.accounts=accounts.clone();
-        sumProvision = "0.00$";
-        sumTransfers = "0.00$";
-    }
-    public boolean makeTransaction(Transaction t){
-        Account from=getAccountById(t.getFromId());
-        Account to=getAccountById(t.getToId());
-        if(from==null || to==null) return false;
-        if(stringToDouble(from.getBalance()) < stringToDouble(t.getAmount()))return false;
+        this.accounts=Arrays.copyOf(accounts,accounts.length);
+        vkupnaTransfer=0;
+        provizija=0;
 
-        to.setBalance(doubleToString(stringToDouble(to.getBalance())+stringToDouble(t.getAmount())));
-        from.setBalance (doubleToString(stringToDouble(from.getBalance())-stringToDouble(t.getAmount())-t.calculateProvison()));
-        sumProvision = doubleToString(stringToDouble(sumProvision)+t.calculateProvison());
-        sumTransfers = doubleToString(stringToDouble(sumTransfers)+stringToDouble(t.getAmount()));
-        return true;
     }
 
-    static double stringToDouble(String s){
-        return Double.parseDouble(s.substring(0, s.length()-1));
-    }
-    static String doubleToString(double db){
-        return String.format("%.2f$", db);
-    }
-
-    public Account getAccountById(long id){
-
-        for(Account ac : accounts){
-            if(ac.getId()== id)
-                return ac;
-
-        }
-        return null;
-    }
-    public String totalTransfers(){
-        return sumTransfers;
-    }
-    public String totalProvision(){
-        return sumProvision;
-    }
-    public Account[] getAccounts(){
+    public Account[] getAccounts()
+    {
         return this.accounts;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Name: ").append(name).append("\n\n");
-        for(Account ac : accounts)sb.append(ac);
+    public boolean makeTransaction(Transaction t){
+        Account from=getAccount(t.getFromId());
+        Account to=getAccount(t.getToId());
+        if(from==null || to==null) return false;
+        String [] b=from.getBalance().split("$");
+        String [] a=t.amount.split("$");
+        if(Integer.parseInt(b[0])+t.calculateProvision()>=Integer.parseInt(a[0])) {
+            provizija+=t.calculateProvision();
+
+            from.setBalance(Integer.toString(Integer.parseInt(from.getBalance())-(Integer.parseInt(a[0])+(int)t.calculateProvision())));
+            to.setBalance(Integer.toString(Integer.parseInt(to.getBalance())+(Integer.parseInt(a[0]))));
+            vkupnaTransfer+=Integer.parseInt(a[0]);
+            return true;
+        }
+        else return false;
+
+    }
+
+    public Account getAccount(long id)
+    {
+        for(Account acc:accounts)
+        {
+            if(acc.getId()==id)
+                return acc;
+        }
+        return null;
+    }
+
+    public String totalTransfers(){
+        String a=Float.toString(vkupnaTransfer);
+        StringBuilder sb=new StringBuilder();
+        sb.append(a).append("$");
+        return sb.toString();
+
+
+
+    }
+
+    public String totalProvision(){
+
+        String a=Float.toString(provizija);
+        StringBuilder sb=new StringBuilder();
+        sb.append(a).append("$");
+        return sb.toString();
+    }
+
+    public String toString(){
+        StringBuilder sb=new StringBuilder();
+        sb.append("Name:").append(name).append("\n\n");
+        for (Account acc: accounts)
+        {
+            sb.append(acc.toString());
+        }
 
         return sb.toString();
     }
@@ -356,15 +386,15 @@ class Bank {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Bank bank = (Bank) o;
-        return Arrays.equals(accounts, bank.accounts) &&
+        return Float.compare(bank.vkupnaTransfer, vkupnaTransfer) == 0 &&
+                Float.compare(bank.provizija, provizija) == 0 &&
                 Objects.equals(name, bank.name) &&
-                Objects.equals(sumTransfers, bank.sumTransfers) &&
-                Objects.equals(sumProvision, bank.sumProvision);
+                Arrays.equals(accounts, bank.accounts);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(name, sumTransfers, sumProvision);
+        int result = Objects.hash(name, vkupnaTransfer, provizija);
         result = 31 * result + Arrays.hashCode(accounts);
         return result;
     }
