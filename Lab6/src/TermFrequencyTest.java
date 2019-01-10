@@ -39,11 +39,10 @@ class TermFrequency {
         String[] words = line.split(" ");
         for(String s : words){
             s = s.replaceAll("[.,]$","");
-            s = s.replaceAll("[”“]", "");
             if(s.length() > 0){
               if(!stopWords.contains(s)){
                   addWord(s);
-                  System.out.print(s+"     ");
+                  //System.out.print(s+"     ");
               }
             }
         }
@@ -69,7 +68,14 @@ class TermFrequency {
     public List<String> mostOften(int k) {
         LinkedList<String> ll = new LinkedList<>(words.keySet());
 
-        ll.sort(Comparator.comparing(o -> words.get(o)));
+        ll.sort((o1, o2) -> {
+            if(words.get(o1) < words.get(o2)){
+                return 1;
+            }else if(words.get(o1) == words.get(o2)){
+                return o1.compareTo(o2);
+            }
+            return -1;
+        });
 
         return ll.stream().limit(k).collect(Collectors.toList());
     }

@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0a0fe69-7a18-4904-adb4-0a2eb90ac4c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Anagrams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ChatSystemTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SchedulerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TermFrequencyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab7/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab7/src/TriviaGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TermFrequencyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TermFrequencyTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,18 +29,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8617" />
+          <entry key="JAVA" value="8894" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TermFrequencyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="41" column="41" selection-end-line="75" selection-end-column="1" />
+            <state relative-caret-position="487">
+              <caret line="76" column="22" selection-end-line="81" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ChatSystemTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="131" column="102" selection-start-line="131" selection-start-column="102" selection-end-line="131" selection-end-column="102" />
+            <state relative-caret-position="368">
+              <caret line="134" lean-forward="true" selection-end-line="176" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2136#2137#0" expanded="true" />
@@ -109,8 +102,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/SchedulerTest.java" />
         <option value="$PROJECT_DIR$/src/Anagrams.java" />
-        <option value="$PROJECT_DIR$/src/TermFrequencyTest.java" />
         <option value="$PROJECT_DIR$/src/ChatSystemTest.java" />
+        <option value="$PROJECT_DIR$/src/TermFrequencyTest.java" />
       </list>
     </option>
   </component>
@@ -144,6 +137,12 @@
               <item name="Lab6" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Lab6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab6" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="TermFrequencyTest.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -154,7 +153,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547135001153" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547136156032" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -208,18 +207,18 @@
       <updated>1546878582571</updated>
       <workItem from="1546878585582" duration="27007000" />
       <workItem from="1546968205122" duration="241000" />
-      <workItem from="1547130925356" duration="4017000" />
+      <workItem from="1547130925356" duration="5179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31265000" />
+    <option name="totallyTimeSpent" value="32427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -295,20 +294,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TermFrequencyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="41" column="41" selection-end-line="75" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatSystemTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="131" column="102" selection-start-line="131" selection-start-column="102" selection-end-line="131" selection-end-column="102" />
+        <state relative-caret-position="368">
+          <caret line="134" lean-forward="true" selection-end-line="176" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2136#2137#0" expanded="true" />
@@ -329,6 +318,16 @@
             <element signature="e#3446#3447#0" expanded="true" />
             <element signature="e#4990#4991#0" expanded="true" />
             <element signature="e#5076#5077#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TermFrequencyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="76" column="22" selection-end-line="81" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
